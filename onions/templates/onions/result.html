@@ -1,0 +1,46 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<style> .centerbox { width: 400px; position: absolute; left: 50%; margin-left: -200px; } </style>
+
+<head>
+  <title>OnionSearch-Search Result</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+
+<div class="container">
+  <div class="centerbox">
+    <img src = "{% static "img/gudetama2.jpg" %}">
+    <form action ='./result' method='get'>
+    <input id='Keyword' type="text" name="Keyword" placeholder = "Onion url or keyword">
+    </form>
+  </div>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td><B>URL</B></td>
+            <!--<td><B>Response Body</B></td> -->
+            <td><B>Onionscan result</B></td>
+        </tr>
+        </thead>
+        <!-- 이 부분이 바뀌었습니다 -->
+        <tbody>
+        {% for onion in onions %}
+        <tr>
+            <td> {{ onion.name }} </td>
+         <!--   <td> {{ onion.body}} </td> -->
+            <td> <a href = "datas/{{onion.onionscanfile}}/">{{onion.onionscanfile}}</a></td>
+        </tr>
+        {% endfor %}
+        <!-- 여기까지 -->
+        <tbody>
+    </table>
+</body>

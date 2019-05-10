@@ -1,0 +1,36 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>OnionSearch</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+
+<div class="container">
+  <div class="outer">
+    <div class="inner">
+      <div class="centered">
+        <img src = "{% static "img/gudetama.png" %}">
+        
+        <form action ='./result' method='get'>
+        <!--<label for='Keyword'> Enter Keyword: </label>--> 
+        <input id='Keyword' type="text" name="Keyword" placeholder = "Onion url or keyword">
+        <!--<input type="submit" value="검색"> -->
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<br><br>
+
+</body>
