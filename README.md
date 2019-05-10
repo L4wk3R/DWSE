@@ -1,4 +1,4 @@
-# DWSE (Dark Web Search Engine)
+# DWSE (Simple Dark Web Search Engine)
 This is Dark Web Search Engine Model within Tor Network 
 
 ## Demo
